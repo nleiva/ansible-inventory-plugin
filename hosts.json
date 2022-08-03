@@ -1,29 +1,29 @@
 [
     {
-      "ansible_host":"sandbox-iosxe-latest-1.cisco.com",
-      "ansible_user":"developer",
-      "ansible_password":"C1sco12345",
-      "ansible_network_os":"cisco.ios.ios",
-      "ansible_connection":"ansible.netcommon.network_cli",
-      "ansible_port":"22"
+      "name":"sandbox-iosxe-latest-1.cisco.com",
+      "user":"developer",
+      "password":"C1sco12345",
+      "network_os":"cisco.ios.ios",
+      "connection":"ansible.netcommon.network_cli",
+      "port":"22"
     },
     {
-      "ansible_host":"sandbox-iosxr-1.cisco.com",
-      "ansible_user":"admin",
-      "ansible_password":"C1sco12345",
-      "ansible_network_os":"cisco.iosxr.iosxr",
-      "ansible_connection":"ansible.netcommon.network_cli",
-      "ansible_port":"22"
+      "name":"sandbox-iosxr-1.cisco.com",
+      "user":"admin",
+      "password":"C1sco12345",
+      "network_os":"cisco.iosxr.iosxr",
+      "connection":"ansible.netcommon.network_cli",
+      "port":"22"
     },
     {
-      "ansible_host":"sandbox-nxos-1.cisco.com",
-      "ansible_user":"admin",
-      "ansible_password":"Admin_1234!",
-      "ansible_network_os":"cisco.nxos.nxos",
-      "ansible_connection":"ansible.netcommon.network_cli",
-      "ansible_port":"443",
-      "ansible_connection":"ansible.netcommon.httpapi",
-      "ansible_httpapi_use_ssl":"yes",
-      "ansible_httpapi_validate_certs":"no"
+      "name":"sandbox-nxos-1.cisco.com",
+      "user":"admin",
+      "password":"Admin_1234!",
+      "network_os":"cisco.nxos.nxos",
+      "connection":"ansible.netcommon.network_cli",
+      "port":"443",
+      "connection":"ansible.netcommon.httpapi",
+      "httpapi_use_ssl":"yes",
+      "httpapi_validate_certs":"no"
     }
   ]
