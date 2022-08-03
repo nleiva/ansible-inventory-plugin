@@ -75,11 +75,11 @@ class InventoryModule(BaseInventoryPlugin):
         for host in self._get_json("%s" % self.my_url):
             host_name = self.inventory.add_host(host.get('name'))
         
-        vars = host
-        del vars['name']
+            vars = host
+            del vars['name']
 
-        for key, value in vars.items():
-            self.inventory.set_variable(host_name, key, value)
+            for key, value in vars.items():
+                self.inventory.set_variable(host_name, key, value)
 
 
     def parse(self, inventory, loader, path, cache=True):

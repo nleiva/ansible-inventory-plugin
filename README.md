@@ -14,6 +14,20 @@ $ ansible-inventory -i inventory.yml --list
 {
     "_meta": {
         "hostvars": {
+            "sandbox-iosxe-latest-1.cisco.com": {
+                "connection": "ansible.netcommon.network_cli",
+                "network_os": "cisco.ios.ios",
+                "password": "C1sco12345",
+                "port": "22",
+                "user": "developer"
+            },
+            "sandbox-iosxr-1.cisco.com": {
+                "connection": "ansible.netcommon.network_cli",
+                "network_os": "cisco.iosxr.iosxr",
+                "password": "C1sco12345",
+                "port": "22",
+                "user": "admin"
+            },
             "sandbox-nxos-1.cisco.com": {
                 "connection": "ansible.netcommon.httpapi",
                 "httpapi_use_ssl": "yes",
@@ -38,4 +52,5 @@ $ ansible-inventory -i inventory.yml --list
         ]
     }
 }
+
 ```
