@@ -1,0 +1,3 @@
+plugin: nleiva.json.my_plugin
+link_to_inventory: https://raw.githubusercontent.com/nleiva/ansible-inventory-plugin/main/hosts.json
+validate_certs: true 
