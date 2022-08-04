@@ -2,7 +2,7 @@ from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
 DOCUMENTATION = r'''
-    name: nleiva.json.my_plugin
+    name: nleiva.inventory.json
     plugin_type: inventory
     short_description: Inventory plugin demo
     description: My Ansible inventory plugin demo
@@ -10,7 +10,7 @@ DOCUMENTATION = r'''
       plugin:
           description: Name of the plugin
           required: true
-          choices: ['nleiva.json.my_plugin']
+          choices: ['nleiva.inventory.json']
       link_to_inventory:
         description: Location of the inventory
         required: true
@@ -24,6 +24,7 @@ from distutils.version import LooseVersion
 
 from ansible.plugins.inventory import BaseInventoryPlugin, Cacheable
 from ansible.errors import AnsibleError, AnsibleParserError
+from ansible.module_utils._text import to_text
 
 # Third party imports
 try:
@@ -35,7 +36,7 @@ except ImportError:
 
 
 class InventoryModule(BaseInventoryPlugin):
-    NAME = 'nleiva.json.my_plugin'
+    NAME = 'nleiva.inventory.json'
 
     def __init__(self):
 
@@ -69,15 +70,25 @@ class InventoryModule(BaseInventoryPlugin):
 
         return response.json()
 
+    def _parse_group(self, host, os):
+        group = os.split(".")[-1]
+        try:
+            group = self.inventory.add_group(group)
+        except AnsibleError as e:
+            raise AnsibleParserError("Unable to add group %s: %s" % (group, to_text(e)))
+
+        self.inventory.add_child(group, host)
+
 
     def _populate(self):
 
         for host in self._get_json("%s" % self.my_url):
             host_name = self.inventory.add_host(host.get('name'))
-        
+            
             vars = host
+            self._parse_group(vars['name'], vars['network_os'])
+            
             del vars['name']
-
             for key, value in vars.items():
                 self.inventory.set_variable(host_name, key, value)
 

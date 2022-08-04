@@ -3,10 +3,13 @@
 ```bash
 $ ansible-inventory -i inventory.yml --graph
 @all:
-  |--@ungrouped:
+  |--@ios:
   |  |--sandbox-iosxe-latest-1.cisco.com
+  |--@iosxr:
   |  |--sandbox-iosxr-1.cisco.com
+  |--@nxos:
   |  |--sandbox-nxos-1.cisco.com
+  |--@ungrouped:
 ```
 
 ```bash
@@ -41,16 +44,26 @@ $ ansible-inventory -i inventory.yml --list
     },
     "all": {
         "children": [
+            "ios",
+            "iosxr",
+            "nxos",
             "ungrouped"
         ]
     },
-    "ungrouped": {
+    "ios": {
         "hosts": [
-            "sandbox-iosxe-latest-1.cisco.com",
-            "sandbox-iosxr-1.cisco.com",
+            "sandbox-iosxe-latest-1.cisco.com"
+        ]
+    },
+    "iosxr": {
+        "hosts": [
+            "sandbox-iosxr-1.cisco.com"
+        ]
+    },
+    "nxos": {
+        "hosts": [
             "sandbox-nxos-1.cisco.com"
         ]
     }
 }
-
 ```
