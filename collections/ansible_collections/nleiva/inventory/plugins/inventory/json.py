@@ -92,7 +92,7 @@ class InventoryModule(BaseInventoryPlugin):
             
             del vars['name']
             for key, value in vars.items():
-                self.inventory.set_variable(host_name, key, value)
+                self.inventory.set_variable(host_name, "ansible_" + key, value)
 
 
     def parse(self, inventory, loader, path, cache=True):

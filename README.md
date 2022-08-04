@@ -27,7 +27,7 @@ You can also include it in a `requirements.yml` file and install it via `ansible
 ---
 collections:
   - name: nleiva.inventory
-    version: 1.0.4
+    version: 1.0.5
 ```
 
 ### Using a plugin from the Inventory Collection
@@ -48,14 +48,14 @@ With the [inventory.yml](inventory.yml) file in place, you can run `ansible-inve
 ```bash
 $ ansible-inventory -i inventory.yml --graph
 @all:
-  |--@ios:
-  |  |--sandbox-iosxe-latest-1.cisco.com
-  |--@iosxr:
-  |  |--sandbox-iosxr-1.cisco.com
-  |--@nxos:
-  |  |--sandbox-nxos-1.cisco.com
-  |-
-
+  |--@routers:
+  |  |--@ios:
+  |  |  |--sandbox-iosxe-latest-1.cisco.com
+  |  |--@iosxr:
+  |  |  |--sandbox-iosxr-1.cisco.com
+  |  |--@nxos:
+  |  |  |--sandbox-nxos-1.cisco.com
+  |--@ungrouped:
 ```
 
 ## Publishing New Versions
@@ -63,7 +63,7 @@ $ ansible-inventory -i inventory.yml --graph
 We need to TAG the version with a version number greater than the latest one:
 
 ```
-export TAG=1.0.0
+export TAG=1.0.6
 ```
 
 And then build:
