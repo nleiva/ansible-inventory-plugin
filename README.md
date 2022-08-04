@@ -27,7 +27,7 @@ You can also include it in a `requirements.yml` file and install it via `ansible
 ---
 collections:
   - name: nleiva.inventory
-    version: 1.0.2
+    version: 1.0.3
 ```
 
 ### Using a plugin from the Inventory Collection
@@ -72,7 +72,7 @@ And then build:
 make build
 ```
 
-It will end up in the [Capirca Collection Galaxy page](https://galaxy.ansible.com/nleiva/inventory) if you have access to the namespace.
+It will end up in the [Inventory collection Galaxy page](https://galaxy.ansible.com/nleiva/inventory) if you have access to the namespace.
 
 ## More Information
 
