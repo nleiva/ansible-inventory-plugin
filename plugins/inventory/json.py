@@ -73,7 +73,8 @@ class InventoryModule(BaseInventoryPlugin):
     def _parse_group(self, host, os):
         group = os.split(".")[-1]
         try:
-            group = self.inventory.add_group(group)
+            self.inventory.add_group(group)
+            self.inventory.add_child("routers", group)
         except AnsibleError as e:
             raise AnsibleParserError("Unable to add group %s: %s" % (group, to_text(e)))
 
@@ -81,6 +82,7 @@ class InventoryModule(BaseInventoryPlugin):
 
 
     def _populate(self):
+        self.inventory.add_group("routers")
 
         for host in self._get_json("%s" % self.my_url):
             host_name = self.inventory.add_host(host.get('name'))

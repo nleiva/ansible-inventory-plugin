@@ -27,7 +27,7 @@ You can also include it in a `requirements.yml` file and install it via `ansible
 ---
 collections:
   - name: nleiva.inventory
-    version: 1.0.3
+    version: 1.0.4
 ```
 
 ### Using a plugin from the Inventory Collection

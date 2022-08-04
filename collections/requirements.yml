@@ -1,3 +1,4 @@
 ---
 collections:
   - name: nleiva.inventory
+    version: 1.0.4
