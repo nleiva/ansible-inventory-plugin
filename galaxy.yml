@@ -2,12 +2,12 @@ namespace: nleiva
 description: Capirca Collection for Ansible.
 homepage: "https://github.com/nleiva/inventory"
 name: inventory
-version: 1.0.0
+version: 1.0.1
 readme: "README.md"
 authors:
     - Nicolas Leiva (https://github.com/nleiva)
 license:
-    - "GPL-3.0"
+    - "GPL-3.0-or-later"
 tags:
     - demo
     - collection
