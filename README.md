@@ -19,16 +19,8 @@ Click on the name of a plugin or module to view that content's documentation:
 
 Before using this collection, you need to install it with the Ansible [Galaxy](https://galaxy.ansible.com/nleiva/inventory) CLI:
 
-  ansible-galaxy collection install nleiva.inventory --force -p collections
-
-
-You can also include it in a `requirements.yml` file and install it via `ansible-galaxy collection install -r requirements.yml`, using the format:
-
-```yaml
----
-collections:
-  - name: nleiva.inventory
-    version: 1.0.5
+```bash
+$ ansible-galaxy collection install nleiva.inventory
 ```
 
 ### Using a plugin from the Inventory Collection
